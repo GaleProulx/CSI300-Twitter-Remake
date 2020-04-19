@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
+
+Route::get('/timeline/{action_type}', 'UserActionController@index')->name('timeline');
+Route::get('/tweet', 'UserActionController@create')->name('tweet');
+Route::get('/follow', 'UserActionController@index_follow')->name('index_follow');
+Route::get('/handle/{handle}', 'UserActionController@index_user')->name('index_user');
+
+Route::post('/publish', 'UserActionController@store')->name('post');
+Route::post('/favorite', 'UserActionController@favorite')->name('favorite');
+Route::post('/retweet', 'UserActionController@retweet')->name('retweet');
+Route::post('/follow', 'UserActionController@follow')->name('follow');

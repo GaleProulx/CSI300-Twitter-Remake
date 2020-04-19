@@ -6,3 +6,295 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+body {
+    background-image: url("/assets/img/cliffs_of_moher.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+
+}
+
+.body-container {
+    background-color: #757ba4;
+    box-shadow: 0px 0px 2px 1px #555;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    opacity: 0.9;
+
+    .tweet {
+        background-color: #7593a4;
+        box-shadow: 0px 0px 2px 1px #555;
+        border-radius: 5px;
+        border: 1px solid #000;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        max-width: 600px;
+        transition: 0.2s;
+
+        .header {
+            background-color: #ddd;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin: 0px;
+            padding-top: 5px;
+
+            h1 {
+                font-size: 1.3em;
+            }
+        }
+
+        .sub-header {
+            background-color: #aaa;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+
+            h2 {
+                font-size: 1.0em;
+            }
+        }
+
+        .content {
+            padding: 10px;
+            margin-bottom: 0px;
+        }
+
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 5px;
+
+            .filter-button {
+                background-color: #7593a4;
+                border-radius: 20px;
+                border: 1px solid #000;
+                color: #dddddd;
+                font-size: 1.1em;
+                margin: 5px;
+                margin-top: auto;
+                margin-bottom: auto;
+                padding: 5px;
+                padding-left: 8px;
+                padding-right: 8px;
+                text-decoration: none;
+                transition: 0.2s;
+                vertical-align: middle;
+            }
+
+            filter-button:hover {
+                background-color: #344a56;
+                transition: 0.2s;
+            }
+        }
+    }
+
+    .tweet:hover {
+        box-shadow: 0px 0px 2px 3px #555;
+        transition: 0.2s;
+    }
+
+    form {
+        margin-left: 10%;
+        margin-right: 10%;
+
+        label {
+            background-color: #7593a4;
+            border-radius: 20px;
+            border-bottom-left-radius: 0px;
+            border: 1px solid #000;
+            color: #dddddd;
+            display: block;
+            font-size: 1.1em;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            padding: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            text-decoration: none;
+            transition: 0.2s;
+            vertical-align: middle;
+        }
+
+        input {
+            background-color: #5a6092;
+            border-radius: 10px;
+            border-bottom-right-radius: 0px;
+            border: 0px;
+            border-bottom: 2px solid #e7e8ef;
+            color: #ddd;
+            font-size: 1.1em;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            transition: 0.2s;
+            width: 100%
+        }
+
+        input:focus {
+            background-color: #2f3573;
+            border-bottom: 2px solid #a49e75;
+            transition: 0.2s;
+        }
+
+        .submit {
+            background-color: #7593a4;
+            border-radius: 20px;
+            border: 1px solid #000;
+            color: #dddddd;
+            display: block;
+            font-size: 1.1em;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            padding: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            transition: 0.2s;
+            vertical-align: middle;
+        }
+
+        .submit:hover {
+            background-color: #344a56;
+            transition: 0.2s;
+        }
+    }
+
+    .options-wrapper {
+        background-color: #3d4587;
+        border-top: 1px solid #000;
+        display: flex;
+        justify-content: space-between;
+        margin: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        flex-wrap: wrap;
+    }
+
+    .timeline-option {
+        background-color: #7593a4;
+        border-radius: 20px;
+        border: 1px solid #000;
+        color: #dddddd;
+        display: inline;
+        font-size: 0.9em;
+        margin: 5px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        transition: 0.2s;
+        vertical-align: middle;
+    }
+
+    .timeline-option:hover {
+        background-color: #344a56;
+        transition: 0.2s;
+    }
+}
+
+.nav {
+    background: #a49e75;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 5px;
+    position: sticky;
+    top: 0px;
+    z-index: 5px;
+
+    a {
+        background-color: #7593a4;
+        border-radius: 20px;
+        border: 1px solid #000;
+        color: #dddddd;
+        display: block;
+        font-size: 1.3em;
+        margin: 5px;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 5px;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-decoration: none;
+        transition: 0.2s;
+        vertical-align: middle;
+    }
+
+    a:hover {
+        background-color: #344a56;
+        transition: 0.2s;
+    }
+
+    .website-title {
+        border-top-left-radius: 0px;
+        font-family: 'Cagliostro', sans-serif;
+        font-size: 1.8em;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+.footer {
+    background-color: #7e7a6e;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1.1em;
+    margin-top: 20px;
+    padding: 5px;
+
+    a {
+        background-color: #7593a4;
+        border-radius: 20px;
+        border: 1px solid #000;
+        color: #dddddd;
+        display: block;
+        font-size: 1.1em;
+        margin: 5px;
+        padding: 5px;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-decoration: none;
+        transition: 0.2s;
+        vertical-align: middle;
+    }
+
+    a:hover {
+        background-color: #344a56;
+        transition: 0.2s;
+    }
+
+    .left-info {
+        border-bottom-left-radius: 0px;
+    }
+
+    .right-info {
+        border-bottom-right-radius: 0px;
+    }
+}

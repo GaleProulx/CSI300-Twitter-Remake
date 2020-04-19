@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -52,6 +53,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'first-name' => 'required',
+            'last-name' => 'required'
         ]);
     }
 
@@ -63,6 +66,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        DB::insert('insert into UserHandle values (?, ?, ?)', [
+            $data['name'],
+            $data['first-name'],
+            $data['last-name']
+        ]);
+
+        DB::insert('insert into Contact values (?, ?, ?)', [
+            $data['name'],
+            1,
+            $data['email']
+        ]);
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

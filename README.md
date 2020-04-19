@@ -22,15 +22,12 @@ Purpose: GitHub allows you to download this repository and help contribute to th
 
 - When you have finished you check if the installation was successful by opening up a File Explorer window. Right click where there is not a file and you should now see a new option that says "Git Bash Here."
 
-**2.) Setting Up the Git Repository**
+**2.) Setting Up the Project Folder**
 
-Purpose: We now need to use the Git Bash to download the repository.
+Purpose: find out where the project folder is and what file contains the code.
 
-- Make a folder that you can put this program in and enter it in file explorer. Right click the empty space and open a Git Bash here. You should see your directory in the Terminal window look something like ```~/Desktop/Program```. This is the directory path you are currently in. Make sure you are in the folder you just made. (The folder name should be the final part of the Bash line.)
-
-- Run the command ```git clone repository_link``` replacing the 'repository_link' with the actual link to the repository. (You can retrieve the repository link by going to the GitHub page of this program (also called the repository) and click "Clone or download" and copy the link. Remember, you can paste into a terminal by pressing M3 or the scroll wheel button.)
-
-- Once the respository is downloaded you should see a file with the name of the repository. Change into that directory with ```cd Vermont_Marathon_DMS```. (Note: you can see all the files in a directory with the command ```ls```.)
+- Unzip the uploaded project folder. It will contain two files and a folder. The folder
+that contains all the code for this project is in dms_twitter_final.
 
 **3.) Installing XAMPP**
 
@@ -45,8 +42,8 @@ Purpose: The Vermont Marathon DMS program uses MySQL and Apache and PHP to work.
     DocumentRoot "C:\xampp\apache"
     <Directory "C:\xampp\apache">
     ---------------- CHANGE TO YOUR PUBLIC FOLDER ----------------
-    DocumentRoot "C:\Users\Bob\Desktop\Laravel\Vermont_Marathon_DMS\public"
-    <Directory "C:\Users\Bob\Desktop\Laravel\Vermont_Marathon_DMS\public">
+    DocumentRoot "C:\Users\Frank\Desktop\Laravel\dms_twitter_final\public"
+    <Directory "C:\Users\Frank\Desktop\Laravel\dms_twitter_final\public">
 ```
 
 **4.) Installing Composer**
@@ -79,28 +76,28 @@ Purpose: This program talks to a database, which currently doesn't exist. First 
 
 - Click Admin under MySQL actions. You have now opened up phpMyAdmin. This is how you will manage your database and create it.
 
-- Click New on the left side of the screen and enter the database name ```reimagined```. Then click create.
+- Click New on the left side of the screen and enter the database name ```twitter_db```. Then click create.
 
 - On the top you should see multiple tabs. Click privileges and create a new account (under 'Add User Account'.)
 
-- Fill in the user name with ```wproulx``` and password with ```Reimagine12```. The hostname should be 127.0.0.1. Make sure under 'Global privileges' you check off the 'Check all' box.
+- Fill in the user name with ```gale``` and password with ```'#CSI300_forlife#'```. The hostname should be 127.0.0.1. Make sure under 'Global privileges' you check off the 'Check all' box.
 
 - Click the inconspicuous 'Go' button on the bottom right of the screen.
 
 - Now you should have a user account under the 'User accounts tab that has all privileges.
 
-- You may have noticed I gave you the username and password. This is because the .env file was uploaded with this program. Normally env files are kept off the internet, as they store passwords and usernames in plain text which is never a good idea. For this program it is okay, as it will only ever run locally at a very specific time in a very specific place. Under normal circumstances, you would make your own username and password through your own .env file.
+- You may have noticed I gave you the username and password. This is because the .env file was uploaded with this program. Normally env files are kept off the internet, as they store passwords and usernames in plain text which is never a good idea. For this program it is okay, as it will only ever run locally at a very specific time in a very specific place. Under normal circumstances, you would make your own username and password to put into your own .env file.
 
-**6.) Pushing Migrations to the Database**
+**6.) Run MySQL Scripts and add Authentication tables.**
 
-Purpose: now we just need to migrate everything from the git repository to the server.
+Purpose: now we need to construct the database and push a couple tables from Laravel.
 
-- Open your Git Bash again (making sure you are in the main directory of your program, not in any subfolders/subdirectories) and run ```php artisan migrate```. If everything was successful the Git Bash should have run a bunch of text and said it was successful at the end!
+- Open your Git Bash again (making sure you are in the main directory of your program, not in any subfolders/subdirectories) and run ```composer require laravel/ui``` and ```php artisan ui vue --auth```. If everything was successful the Git Bash should have run a bunch of text and said it was successful at the end!
 
 **7.) Checkout**
 
-Purpose: everything is working, let us doublecheck!
+Purpose: everything is working, let us double check!
 
-- Open the XAMPP control panel and click Admin on the MySQL line. This should open up phpMyAdmin. This is a Graphical User Interface (GUI) that allows you to see the database you made in step five. If you click on 'reimagined' you should now see a bunch of tables listed. This is where our information will be stored.
+- Open the XAMPP control panel and click Admin on the MySQL line. This should open up phpMyAdmin. This is a Graphical User Interface (GUI) that allows you to see the database you made in step five. If you click on 'twitter_db' you should now see a bunch of tables listed. This is where our information will be stored.
 
 - Next open up a web browser and type in 127.0.0.1. Now you should see the main page of our program! If you do, you are all set to test and code!
