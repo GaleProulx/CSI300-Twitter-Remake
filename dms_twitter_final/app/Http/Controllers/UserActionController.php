@@ -136,7 +136,7 @@ class UserActionController extends Controller
             $tweet_id
         ]);
 
-        return redirect()->route('timeline');
+        return redirect()->route('timeline', ['action_type' => 'all']);
     }
 
     /**
@@ -204,7 +204,7 @@ class UserActionController extends Controller
             $request->input('tweet_id')
         ]);
 
-        return redirect()->route('timeline');
+        return redirect()->route('timeline', ['action_type' => 'all']);
     }
 
     public function retweet(Request $request)
@@ -221,7 +221,7 @@ class UserActionController extends Controller
             $request->input('tweet_id')
         ]);
 
-        return redirect()->route('timeline');
+        return redirect()->route('timeline', ['action_type' => 'all']);
     }
 
     public function follow(Request $request)
